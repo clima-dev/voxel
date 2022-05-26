@@ -15,6 +15,8 @@ struct mesh {
     GLuint VBO;
     GLuint EBO;
     Shader sh;
+    int id;
+    glm::vec3 pos;
 };
 
 void init_mesh(mesh *m);

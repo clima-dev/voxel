@@ -6,6 +6,7 @@ add_executable(
     Climaft
     src/main.cpp
     src/mesh.cpp
+    src/renderer.cpp
     deps/glad/src/glad.c
 )
 

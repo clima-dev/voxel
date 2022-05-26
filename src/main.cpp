@@ -1,6 +1,8 @@
 #include "gfx.hpp"
 #include "mesh.hpp"
 #include "glmi.hpp"
+#include "renderer.hpp"
+#include <vector>
 #include <iostream>
 
 int main(int argc, char **argv)
@@ -12,7 +14,7 @@ int main(int argc, char **argv)
     }
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
 
@@ -33,9 +35,9 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    mesh *m;
-    init_mesh(m);
-
+    game *g;
+    init_world(g);
+    glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(window))
     {
         // input
@@ -44,7 +46,7 @@ int main(int argc, char **argv)
         glClearColor(0.4f, 0.3f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        render_mesh(m);
+        render_world(g);
         // clean
         glfwSwapBuffers(window);
         glfwPollEvents();
