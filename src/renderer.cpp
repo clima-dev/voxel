@@ -5,6 +5,9 @@ void init_world(game* g) {
     g->viewLoc = glGetUniformLocation(g->sh.ID, "view");
     g->modelLoc = glGetUniformLocation(g->sh.ID, "model");
     g->projLoc = glGetUniformLocation(g->sh.ID, "projection");
+    g->blocks_model = glm::mat4(1.0f);
+    g->view = glm::mat4(1.0f);
+    g->projection = glm::mat4(1.0f);
 
     for(int i = 0; i < 10; i++) {
         init_mesh(&g->meshes[i]);
