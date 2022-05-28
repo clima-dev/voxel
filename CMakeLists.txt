@@ -15,6 +15,9 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "Build the GLFW test programs" FORCE)
 set(GLFW_INSTALL OFF "Generate installation target" FORCE)
 set(BUILD_EXAMPLES OFF CACHE BOOL "Build example apps" FORCE)
 
+SET(CMAKE_CXX_FLAGS "-O0")
+SET(CMAKE_C_FLAGS "-O0")
+
 add_subdirectory(deps/glfw)
 include_directories(deps/glfw/include)
 include_directories(deps/glad/include)

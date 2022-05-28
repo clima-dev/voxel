@@ -35,9 +35,10 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    game *g;
-    init_world(g);
+    Game g;
     glEnable(GL_DEPTH_TEST);
+
+    
     while (!glfwWindowShouldClose(window))
     {
         // input
@@ -46,7 +47,7 @@ int main(int argc, char **argv)
         glClearColor(0.4f, 0.3f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        render_world(g);
+        g.render_game();
         // clean
         glfwSwapBuffers(window);
         glfwPollEvents();

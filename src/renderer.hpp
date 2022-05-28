@@ -5,8 +5,13 @@
 #include "mesh.hpp"
 #include "shader.hpp"
 
-struct game {
-    mesh* meshes;
+class Game
+{
+public:
+    Game();
+    void render_game();
+private:
+    mesh *meshes;
     Shader sh;
     GLuint modelLoc;
     GLuint viewLoc;
@@ -15,6 +20,3 @@ struct game {
     glm::mat4 view;
     glm::mat4 projection;
 };
-
-void init_world(game* g);
-void render_world(game* g);
