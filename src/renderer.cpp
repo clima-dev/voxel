@@ -18,7 +18,7 @@ Game::Game()
     for (int i = 0; i < 10; i++)
     {
         std::cout << "initialized mesh: " << i << std::endl;
-        init_mesh(&this->meshes[i]);
+        this->meshes[i] = Mesh();
     }
 }
 
@@ -34,9 +34,9 @@ void Game::render_game()
     this->sh.setMat4("projection", this->projection);
     for (int i = 0; i < 10; i++)
     {
-        mesh *m = &this->meshes[i];
+        Mesh* m = &this->meshes[i];
 
-        this->blocks_model = glm::translate(this->blocks_model, glm::vec3(i * 8.f, 0.0f, 0.0f));
+        this->blocks_model = glm::translate(this->blocks_model, glm::vec3(0.0f, 0.0f, 0.0f));
         glUniformMatrix4fv(this->modelLoc, 1, GL_FALSE, glm::value_ptr(this->blocks_model));
         glBindVertexArray(m->VAO);
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);

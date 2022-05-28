@@ -11,7 +11,7 @@ public:
     Game();
     void render_game();
 private:
-    mesh *meshes;
+    Mesh *meshes;
     Shader sh;
     GLuint modelLoc;
     GLuint viewLoc;
