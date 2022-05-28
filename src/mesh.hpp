@@ -11,5 +11,5 @@ public:
     GLuint VBO;
     GLuint EBO;
     int id;
-    glm::vec3 pos;
+    glm::vec3 pos; // This is fine. Later, you will have scale and rotation is here as well
 };
