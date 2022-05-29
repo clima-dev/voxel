@@ -16,7 +16,8 @@ private:
     GLuint modelLoc;
     GLuint viewLoc;
     GLuint projLoc;
-    glm::mat4 blocks_model;
+    glm::vec3 model_scale; //To do later: move scale to your Mesh object. I did it this way so you can visualize what's happening
+    glm::vec3 model_rotation; //To do later: move rotation to your Mesh object. I did it this way so you can visualize what's happening
     glm::mat4 view;
     glm::mat4 projection;
 };
